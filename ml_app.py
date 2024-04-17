@@ -2,7 +2,7 @@ import strteamlit as st
 import pandas as pd
 import numpy as np
 import joblit
-from sklearn.tree import.DecisionTreeClassifier
+from sklearn.tree import DecisionTreeClassifier
 
 #loading up the classificatioin model we created
 model=DecisionTreeClassifier(max_depth=20, min_samples_leaf=5, random_state=0)
