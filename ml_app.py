@@ -7,7 +7,7 @@ from sklearn.tree import DecisionTreeClassifier
 
 #loding up the classification model we created
 model = DecisionTreeClassifier(max_depth=20, min_samples_leaf=5, random_state=0)
-model = jolib.load('finalized_model.joblib')
+model = joblib.load('finalized_model.joblib')
 
 #caching the model for faster loading
 @st.cache
@@ -42,6 +42,6 @@ Lug_boot= st.number_input('lug_boot:',min_value = 1,max_value = 4,value=1)
 Safety = st.radio('safety:',('med','high','low'))
 
 if st.button('Submit_Cars_Infos'):
-  cal_eval = predict(Buying,Maint,Doors,Persons,Lug_boot,Safety)
+  cal_eval = prediction(Buying,Maint,Doors,Persons,Lug_boot,Safety)
   st.success(f'The Evaluation of Car : {cal_eval[0]}')
 
